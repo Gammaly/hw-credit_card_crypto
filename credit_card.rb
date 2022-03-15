@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
-require_relative './luhn_validator.rb'
+require_relative './luhn_validator'
 require 'json'
 
+# Credit Card
 class CreditCard
   # TODO: mixin the LuhnValidator using an 'include' statement
   include LuhnValidator
