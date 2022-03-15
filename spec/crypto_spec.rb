@@ -20,7 +20,6 @@ describe 'Test card info encryption' do
 
     it 'should decrypt text' do
       enc = SubstitutionCipher::Caesar.encrypt(@cc, @key)
-      puts enc
       dec = SubstitutionCipher::Caesar.decrypt(enc, @key)
       _(dec).must_equal @cc.to_s
     end

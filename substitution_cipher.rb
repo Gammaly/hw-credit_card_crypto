@@ -7,7 +7,7 @@ module SubstitutionCipher
     # Returns: String
     def self.encrypt(document, key)
       # TODO: encrypt string using caesar cipher
-      document.to_s.chars.map{ |char| ((char.ord + key - ' '.ord) % 95 + ' '.ord).chr }.join
+      document.to_s.chars.map { |char| ((char.ord + key - ' '.ord) % 95 + ' '.ord).chr }.join
     end
 
     # Decrypts String document using integer key
@@ -17,9 +17,7 @@ module SubstitutionCipher
     # Returns: String
     def self.decrypt(document, key)
       # TODO: decrypt string using caesar cipher
-      arr = document.to_s.chars.map{ |char| ((char.ord - ' '.ord) % 95 + ' '.ord - key).chr }
-      puts arr.join
-      arr.join
+      document.to_s.chars.map { |char| ((char.ord - ' '.ord) % 95 + ' '.ord - key).chr }.join
     end
   end
 
@@ -31,6 +29,8 @@ module SubstitutionCipher
     # Returns: String
     def self.encrypt(document, key)
       # TODO: encrypt string using a permutation cipher
+      dict = (0..127).to_a.shuffle(random: Random.new(key))
+      document.to_s.chars.map { |char| dict[char.ord].chr }.join
     end
 
     # Decrypts String document using integer key
@@ -40,6 +40,8 @@ module SubstitutionCipher
     # Returns: String
     def self.decrypt(document, key)
       # TODO: decrypt string using a permutation cipher
+      dict = (0..127).to_a.shuffle(random: Random.new(key))
+      document.to_s.chars.map { |char| dict.index(char.ord).chr }.join
     end
   end
 end
