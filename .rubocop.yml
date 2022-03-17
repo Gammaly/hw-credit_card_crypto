@@ -7,3 +7,8 @@ Metrics/BlockLength:
   Exclude:
     - spec/**/*
     - Rakefile
+
+Metrics/AbcSize:
+  Enabled: true
+  Exclude:
+    - double_trans_cipher.rb
