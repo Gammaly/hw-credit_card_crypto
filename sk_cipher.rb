@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+require 'rbnacl'
+require 'base64'
+
 # Validates  Modern Symmetric Cipher Algorithm
 module ModernSymmetricCipher
   def self.generate_new_key

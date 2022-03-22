@@ -6,3 +6,5 @@ gem 'minitest'
 
 gem 'bundler-audit'
 gem 'rubocop'
+gem 'rbnacl'
+gem 'base64'
