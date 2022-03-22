@@ -2,6 +2,7 @@
 
 require_relative './luhn_validator'
 require 'json'
+require 'rbnacl'
 
 # Credit Card
 class CreditCard
@@ -55,5 +56,6 @@ class CreditCard
     # TODO: implement this method
     #   - Use sha256 to create a cryptographically secure hash.
     #   - Credit cards with identical information should produce the same hash
+    RbNaCl::Hash.sha256(self.to_json)
   end
 end
