@@ -28,11 +28,11 @@ describe 'Test hashing requirements' do
     describe 'Check hashes are consistently produced' do
       # TODO: Check that each card produces the same hash if hashed repeatedly
       it 'should produce the same hash for a card' do
-        cards_hash_1 = cards.map(&:hash)
-        cards_hash_2 = cards.map(&:hash)
+        cards_hash1 = cards.map(&:hash)
+        cards_hash2 = cards.map(&:hash)
 
-        _(cards_hash_1.first).wont_be_nil
-        _(cards_hash_1).must_equal cards_hash_2
+        _(cards_hash1.first).wont_be_nil
+        _(cards_hash1).must_equal cards_hash2
       end
     end
 
@@ -49,11 +49,11 @@ describe 'Test hashing requirements' do
     describe 'Check hashes are consistently produced' do
       # TODO: Check that each card produces the same hash if hashed repeatedly
       it 'should produce the same hash for a card' do
-        cards_hash_1 = cards.map(&:hash_secure)
-        cards_hash_2 = cards.map(&:hash_secure)
+        cards_hash1 = cards.map(&:hash_secure)
+        cards_hash2 = cards.map(&:hash_secure)
 
-        _(cards_hash_1.first).wont_be_nil
-        _(cards_hash_1).must_equal cards_hash_2
+        _(cards_hash1.first).wont_be_nil
+        _(cards_hash1).must_equal cards_hash2
       end
     end
 
